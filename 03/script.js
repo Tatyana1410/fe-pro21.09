@@ -24,13 +24,13 @@ console.log(`Compare result 1 and 2 ${1==2}`);
 console.log(`Compare result 1 and 2 ${number1===number2}`);
 alert(`Compare result 1 and 2 ${number1===number2}`);
 
-let promptNumber=prompt(`Write number`, "Hier");
+let promptNumber=Number( prompt(`Write number`, "Hier"));
 let result= (`% operation  ${promptNumber%2}`);
 console.log(result);
 console.log(`парное ${ result === 0}`);
 // console.log(`непарное ${ result != 0}`);
 
-let ageUser = prompt(`Your age`);
+let ageUser =Number( prompt(`Your age`));
 alert( `You can use this page ${ageUser>=18}`);
 // alert( `You can't use this page ${ageUser<18}`);
 
@@ -38,5 +38,6 @@ let price = prompt (`What price`);
 let amount = prompt(`How much`);
 console.log(`${price * amount}`);
 
-let Price = prompt(`What price`);
-alert(`discounted price ${Price/2}`);
+let Price = Number(prompt(`What price`));
+let discount = (`${Price*0.5}`)
+alert(`discounted price ${Price-discount}`);
