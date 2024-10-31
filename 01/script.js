@@ -19,3 +19,22 @@ item=`ten`
 console.log(item);
 item=true;
 console.log(item);
+
+// let arrayNames = [`Petya`, `Vasya`, `Kolya`];
+// let arrayBig = [`a`, `b`, `c`,`d`];
+
+// function wellcomUser(array, func){
+// for(let i=0;i<array.length; i++){
+//     func(array[i]);
+// }
+// }
+
+// function hiUser (value){
+//     console.log(`Hello ${value}`);
+// }
+// function byUser (value){
+//     console.log(`By ${value}`);
+// }
+
+// wellcomUser(arrayNames, byUser);
+// wellcomUser(arrayBig, hiUser)
