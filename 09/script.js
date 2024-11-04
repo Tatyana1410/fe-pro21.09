@@ -11,13 +11,13 @@ let newUser = new Person (`John`, 30)
 newUser.sayHello();
 
 class Student extends Person{
-    constructor (name, age, studentld){
+    constructor (name, age, studentId){
         super(name, age);
-        this._studentld = studentld;
+        this._studentId = studentId;
     }
     study(){
-        console.log(`${this._studentld}`);
+        console.log(`This student ID${this._studentId}`);
     }
 };
-let newStudent = new Student (`Tom`, 20, `mathematic`);
+let newStudent = new Student (`Tom`, 20, 123);
 newStudent.study();
