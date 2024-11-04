@@ -11,6 +11,7 @@ function example(){
     }
     console.log(message);
 };
+example();
 
 // 02
 const person = {
