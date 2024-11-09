@@ -1,5 +1,5 @@
 let userValue = prompt (`write your variant`, `rock, paper, scissors`);
-userValue.toLowerCase();
+userValue.toLowerCase().trim();
 let arrVariants = [`rock`, `paper`, 'scissors'];
 let compValue = arrVariants[Math.floor (Math.random(arrVariants)*arrVariants.length)];
 console.log(compValue)
