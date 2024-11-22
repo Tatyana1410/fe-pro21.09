@@ -17,10 +17,9 @@ window.onload = function (){
     for (let element of menuData){
         let a = document.createElement (`a`);
         a.innerHTML = element.name;
-        header.appendChild(a);
         a.setAttribute (`href` , element.url);
-
         a.setAttribute (`target`,`_blank`);
+        header.appendChild(a);
     };
 
     let divEl = document.createElement(`div`);
@@ -31,13 +30,12 @@ window.onload = function (){
     for(let i = 0; i < 50; i ++) {
         let div = document.createElement(`div`);
         div.innerHTML = (i+1);
-        divEl.appendChild(div);
         div.style.borderRadius = `50px`;
         div.style.width = `50px`;
         div.style.height = `50px`;
         div.style.backgroundColor = `grey`;
         div.setAttribute (`class`, `circle-elemt`);
-
+        divEl.appendChild(div);
         if (i%5==0){
                 div.style.backgroundColor = `green`;
             }

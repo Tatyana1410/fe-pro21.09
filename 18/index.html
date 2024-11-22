@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <form action="">
+            <div>
+                <input type="radio" value="red" name="color">red</div>
+            <div>
+                <input type="radio" value="green" name="color">green</div>
+            <div>
+                <input type="radio" value="blue" name="color">blue</div>
+    </form>
+    </div>
+    <div class="second">
+        <form action="">
+            <label for="hobby1"><input type="checkbox" name="hobby" value="read"></label>
+            <label for="hobby2"><input type="checkbox" name="hobby" value="sport"></label>
+            <label for="hobby3"><input type="checkbox" name="hobby" value="music"></label>
+            <button class="show">hobbys checked</button>
+        </form>
+    </div>
+    <div class="third">
+        <select name="countries" id="country">
+            <option value="capital is Kyiv">Ukraine</option>
+            <option value="capital is Berlin">Germany</option>
+            <option value="capital is Washington">USA</option>
+        </select>
+        <p class="capital"></p>
+    </div>
+    <div class="forth">
+        <form action="">
+            <label for="grade">1
+                <input type="radio" name="grade" value="1"></label> <br>
+            <label for="grade">2
+                <input type="radio" name="grade" value="2"></label><br>
+            <label for="grade">3
+                <input type="radio" name="grade" value="3"></label><br>
+            <label for="grade">4
+                <input type="radio" name="grade" value="4"></label><br>
+            <label for="grade">5
+                <input type="radio" name="grade" value="5"></label><br>
+        </form>
+    </div>
+    <div class="pizza-order">
+        <form action="">
+        <select name="pizzas" id="pizza">
+            <option value="margarita" >Margarita</option>
+            <option value="4 cheeses" >4 cheese</option>
+            <option value="cheese and mashroom">Cheese and mashrooms</option>
+        </select>
+        <!-- <div class="choose-size"> -->
+            <p>Choose size</p>
+            <label for="radio"> Small<input type="radio" name="size" value="small"></label> <br>
+            <label for="radio"> Medium<input type="radio" name="size" value="medium"></label> <br>
+            <label for="radio">Large <input type="radio" name="size" value="large"></label>
+        <!-- </div> -->
+
+        <!-- <div class="add-filling"> -->
+            <p>Add filling</p>
+            <label for="filling"> <input type="checkbox" name="filling" value="doublecheese" >Double cheese</label>  <br>
+            <label for="filling"> <input type="checkbox" name="filling" value="tomate">Tomates</label>  <br>
+            <label for="filling"> <input type="checkbox" name="filling" value="onion">Onion</label>  <br>
+            <button class="addBtn"></button>
+        <!-- </div> -->
+        <p class="yourAdd">your choose <span class="one"></span> <span class="two"></span> <span class="three"></span><span class="four">Price:</span></p>
+    </form>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
