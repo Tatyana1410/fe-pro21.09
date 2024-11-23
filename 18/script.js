@@ -10,22 +10,15 @@ window.onload = function(){
     });
 
     let result = document.querySelector(`.second`);
-    let btn2 = document.querySelector(`.show`);
     let [...checkboxes]=document.querySelectorAll(`input[name="hobby"]`);
-        btn2.addEventListener(`click`,function(e){
-        e.preventDefault();
-        checkedValue=[];
-        checkboxes.forEach(item=>{
-            if(item.checked){
-            checkedValue.push(item.value)
-            }
+    checkboxes.forEach(checkbox=>{
+        checkbox.addEventListener(`change`,function(e){
+        const checkHobby = checkboxes.filter(i=>i.checked).map(i=>i.value);
+        result.textContent = `Your hobby is ${checkHobby.join(`, `)}`;
     })
-        checkedValue.forEach(item=>{
-        let p = document.createElement(`p`);
-        p.innerText = item;
-        result.appendChild(p);
-    })
-    });
+})
+        
+    
 
 let country = document.querySelector(`#country`);
 let resultCountry = document.querySelector(`.capital`);
@@ -33,56 +26,39 @@ country.addEventListener(`change`, function(){
     resultCountry.innerText=this.value;
 });
 
-let formEl=document.querySelector(`.forth`);
+
+let markRes = document.querySelector(`.mark`);
 let [...BtnRadio] = document.querySelectorAll(`input[name="grade"]`);
-formEl.addEventListener(`change`, ()=>{
-    for(radioubutton of BtnRadio){
-        if(radioubutton.checked){
-            let mark = document.createElement(`p`);
-            mark.innerText=`Дякуємо за вашу оцінку! ${radioubutton.value}`;
-            formEl.appendChild(mark);
-            break;
-        }
-    }
+BtnRadio.forEach(radioEl=>{
+    radioEl.addEventListener(`change`,function(){
+        markRes.textContent = `Your mark is ${this.value}`;
+ })
 })
 
+  
+
 // pizza
-let pizza = document.querySelector(`.pizza-order`);
 let name = document.querySelector(`#pizza`)
 let [...radioSize]=document.querySelectorAll(`input[name="size"]`);
 let [...checkAdd]=document.querySelectorAll(`input[name="filling"]`);
-let add = document.querySelector(`.addBtn`);
-let p = document.querySelector(`.yourAdd`);
 let one = document.querySelector(`.one`);
 let two = document.querySelector(`.two`);
 let three = document.querySelector(`.three`);
 let four = document.querySelector(`.four`);
 
 name.addEventListener(`change`, function(){
-    one.innerHTML=this.value;
-    four.innerText=this.price;
+    one.innerHTML=`Your pizza ${this.value}`;
 });
-pizza.addEventListener(`change`, function(){
-    for(radioubutton of radioSize){
-        if(radioubutton.checked){
-            two.innerHTML=radioubutton.value;
-            break;
-        }
-    }
-});
-add.addEventListener(`click`, function(e){
-    e.preventDefault();
-    checkVal = [];
-    checkAdd.forEach(item=>{
-        if(item.checked){
-            checkVal.push(item.value)
-        }
-        checkVal.forEach(item=>{
-            let li= document.createElement(`li`);
-            li.innerText=item;
-            three.appendChild(li);
-        })
-    })
+radioSize.forEach(radioEl=>{
+    radioEl.addEventListener(`change`,function(){
+        two.textContent = `Your size is ${this.value}`;
+ })
+})
+checkAdd.forEach(checkbox=>{
+    checkbox.addEventListener(`change`,function(){
+    const addCheck = checkAdd.filter(i=>i.checked).map(i=>i.value);
+    three.textContent = `You add is ${addCheck.join(`, `)}`;
+})
 })
 
 }
