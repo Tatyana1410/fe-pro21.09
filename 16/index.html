@@ -8,7 +8,7 @@
         .main, .house{
             height: 400px;
             border: 2px solid rgb(161, 44, 44);
-            position: relative;
+            /* position: relative; */
         }
         .child, .mouse{
             width: 100px;
@@ -31,6 +31,14 @@
         .third:hover{
             background-color: blue;
         }
+        .active{
+            outline: 1px solid red;
+        }
+        body{
+            box-sizing: border-box;
+        }
+
+
     
     </style>
     
@@ -53,12 +61,12 @@
 <div class="main">
     <div class="child"></div>
 </div>
-<img src="kartinki.png" alt="">
+<img src="kartinki.png" width="100px">
 
-<ul class="menu">
-    <li class="first" tabindex="0">red</li>
-    <li class="second" tabindex="0">green</li>
-    <li class="third" tabindex="0">blue</li>
+<ul class="menu" tabindex="-1">
+    <li>red</li>
+    <li>green</li>
+    <li>blue</li>
 </ul>
 
 <div class="house">
