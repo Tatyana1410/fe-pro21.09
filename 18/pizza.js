@@ -46,19 +46,49 @@ let two = document.querySelector(`.two`);
 let three = document.querySelector(`.three`);
 let four = document.querySelector(`.four`);
 
-name.addEventListener(`change`, function(){
-    one.innerHTML=`Your pizza ${this.value}`;
-});
-radioSize.forEach(radioEl=>{
-    radioEl.addEventListener(`change`,function(){
-        two.textContent = `Your size is ${this.value}`;
- })
-})
-checkAdd.forEach(checkbox=>{
-    checkbox.addEventListener(`change`,function(){
-    const addCheck = checkAdd.filter(i=>i.checked).map(i=>i.value);
-    three.textContent = `You add is ${addCheck.join(`, `)}`;
-})
-})
+// Функція для оновлення ціни
+function updatePrice() {
+    let price = 0;
 
+    // Додаємо ціну за вибір піци (якщо потрібно)
+    if (name.value) {
+        price += 5;
+    }
+
+    // Додаємо ціну за вибір розміру піци
+    const selectedSize = radioSize.find(radio => radio.checked);
+    if (selectedSize) {
+        price += 5;
+    }
+
+    // Додаємо ціну за кожну вибрану начинку
+    const selectedFillings = checkAdd.filter(checkbox => checkbox.checked);
+    price += selectedFillings.length * 5;
+
+    totalPrice = price;
+    four.textContent = `Загальна ціна: ${totalPrice} грн`;
+}
+
+// Слухач подій для зміни назви піци
+name.addEventListener(`change`, function(){
+    one.innerHTML = `Ваша піца: ${this.value}`;
+    updatePrice();
+});
+
+// Слухачі подій для вибору розміру
+radioSize.forEach(radioEl => {
+    radioEl.addEventListener(`change`, function(){
+        two.textContent = `Розмір: ${this.value}`;
+        updatePrice();
+    });
+});
+
+// Слухачі подій для вибору начинки
+checkAdd.forEach(checkbox => {
+    checkbox.addEventListener(`change`, function(){
+        const addCheck = checkAdd.filter(i => i.checked).map(i => i.value);
+        three.textContent = `Начинки: ${addCheck.join(`, `)}`;
+        updatePrice();
+    });
+});
 }

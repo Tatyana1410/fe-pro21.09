@@ -5,6 +5,12 @@ window.onload=function(){
     setTimeout(function(sayHi, time) {
         console.log(sayHi)
       }, time, sayHi)
+
+    // function displayMessage(message, delay){
+    //     setTimeout(()=>{
+    //         console.log(message);
+    //     }, delay);
+    // }
       
     // 2
     let btnTime = document.querySelector(`.timer`);
