@@ -80,11 +80,11 @@ window.onload = function(){
     document.addEventListener(`keydown` , function(e){
         if(e.key === `ArrowUp`){
             li=li.previousSibling;
-            li.classList.add('active');
+            li.classList.toggle('active');
         }
         else if(e.key === 'ArrowDown'){
             li=li.nextElementSibling;
-            li.classList.add('active');
+            li.classList.toggle('active');
         }
     })
     

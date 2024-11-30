@@ -24,6 +24,7 @@ window.onload=function(){
 
 
     // 3
+
     let task = document.querySelector(`.task`);
     let btnTask = document.querySelector(`.add-task`);
     let todo = document.querySelector(`.to-do`);
@@ -40,6 +41,11 @@ window.onload=function(){
         };
     
     saveRes.innerHTML = localStorage[`task`]; 
+
+    
+    window.localStorage.uwer = JSON.stringify({userName:`Tom`});
+    let parseData = JSON.parse(window.localStorage.getItem("user"));
+    console.log(parseData)
     
     
     
