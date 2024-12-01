@@ -1,14 +1,18 @@
 window.onload = function(){
     async function getId() {
+        try{
         let res = await fetch (`https://jsonplaceholder.typicode.com/users/1`);
         let data = await res.json();
         let divEl = document.createElement('div');
                 divEl.innerHTML = `
                 <p>${data.name}</p>
                 <p>${data.email}</p>`;
-                document.body.appendChild(divEl);
-            };
+                document.body.appendChild(divEl);}
+        catch(error){console.log(error.message)};
+            }
     getId();
+
+
 
     async function getFilm() {
         let res = await fetch('https://swapi.dev/api/films/4/');
